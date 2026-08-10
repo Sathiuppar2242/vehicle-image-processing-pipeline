@@ -1,0 +1,53 @@
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+
+const imageRoutes = require("./routes/imageRoutes");
+
+dotenv.config();
+
+const app = express();
+
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Serve uploaded and processed images
+app.use("/uploads", express.static("uploads"));
+app.use("/processed", express.static("processed"));
+
+// Health check
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Vehicle Image Processing API is running",
+  });
+});
+
+// Image routes
+app.use("/api/images", imageRoutes);
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
+});
+
+// Error handler
+app.use((err, req, res, next) => {
+  console.error("Server error:", err);
+
+  res.status(500).json({
+    success: false,
+    message: "Internal server error",
+    error: err.message,
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
