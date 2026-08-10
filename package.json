@@ -1,0 +1,26 @@
+{
+  "name": "vehicle-image-processing-pipeline",
+  "version": "1.0.0",
+  "description": "Vehicle image processing pipeline using Node.js, Express, Multer, and Sharp",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "vehicle",
+    "image-processing",
+    "nodejs",
+    "express",
+    "sharp",
+    "multer"
+  ],
+  "author": "Sathish R",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "sharp": "^0.34.3"
+  }
+}
