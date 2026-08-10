@@ -1,0 +1,9 @@
+POST http://localhost:5000/api/images/upload
+Content-Type: multipart/form-data; boundary=----VehicleBoundary
+
+------VehicleBoundary
+Content-Disposition: form-data; name="image"; filename="vehicle.jpg"
+Content-Type: image/jpeg
+
+< ./uploads/vehicle.jpg
+------VehicleBoundary--
