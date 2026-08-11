@@ -24,12 +24,19 @@ res.json({
 success: true,
 message: "Vehicle Image Processing API is running",
 status: "healthy",
+apiVersion: "1.0.0",
 environment: process.env.NODE_ENV || "development",
 timestamp: new Date().toISOString(),
 });
-});  });
 });
 
+app.get("/health", (req, res) => {
+res.json({
+success: true,
+status: "healthy",
+service: "vehicle-image-processing-api",
+});
+});
 // Image routes
 app.use("/api/images", imageRoutes);
 
