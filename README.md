@@ -170,3 +170,28 @@ Sathish R
 - Image Processing
 - REST API
 - File Upload Handling
+
+## API Endpoint
+
+### Upload Vehicle Image
+
+**Endpoint:**
+POST `/api/images/upload`
+
+**Content-Type:**
+multipart/form-data
+
+**Request Field:**
+`image`
+
+The endpoint accepts a vehicle image, processes it through the image
+processing pipeline, and returns the processing result.
+
+### Example Request
+
+Use the `src/test.http` file to test the API endpoint.
+
+### Response
+
+The API returns information about the uploaded image and the processed
+image result.
