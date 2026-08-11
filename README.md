@@ -153,6 +153,20 @@ Author
 Sathish R
 
 
-After pasting, save with **Ctrl + S**.
+## Project Workflow
 
-Then tell me **Done Step 56**.
+1. Upload a vehicle image through the API.
+2. Validate the uploaded image.
+3. Process and optimize the image.
+4. Analyze image quality and metadata.
+5. Store the processed image.
+6. Return the processing result through the API.
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- JavaScript
+- Image Processing
+- REST API
+- File Upload Handling
