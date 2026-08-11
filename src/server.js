@@ -35,6 +35,9 @@ res.json({
 success: true,
 status: "healthy",
 service: "vehicle-image-processing-api",
+version: "1.0.0",
+uptime: process.uptime(),
+timestamp: new Date().toISOString(),
 });
 });
 // Image routes
