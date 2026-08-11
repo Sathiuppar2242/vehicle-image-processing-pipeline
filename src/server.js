@@ -19,13 +19,12 @@ app.use("/uploads", express.static("uploads"));
 app.use("/processed", express.static("processed"));
 
 // Health check
-app.get("/", (req, res) => {
-res.json({
-success: true,
-message: "Vehicle Image Processing API is running",
-status: "healthy",
-apiVersion: "1.0.0",
-environment: process.env.NODE_ENV || "development",
+app.use((req, res) => {
+res.status(404).json({
+success: false,
+message: "Route not found",
+method: req.method,
+path: req.originalUrl,
 timestamp: new Date().toISOString(),
 });
 });
