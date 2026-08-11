@@ -42,14 +42,14 @@ app.use((req, res) => {
 });
 
 // Error handler
-app.use((err, req, res, next) => {
-  console.error("Server error:", err);
-
-  res.status(500).json({
-    success: false,
-    message: "Internal server error",
-    error: err.message,
-  });
+app.use((req, res) => {
+res.status(404).json({
+success: false,
+message: "Route not found",
+method: req.method,
+path: req.originalUrl,
+});
+});  });
 });
 
 app.listen(PORT, () => {
