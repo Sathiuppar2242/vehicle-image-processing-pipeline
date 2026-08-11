@@ -20,10 +20,14 @@ app.use("/processed", express.static("processed"));
 
 // Health check
 app.get("/", (req, res) => {
-  res.json({
-    success: true,
-    message: "Vehicle Image Processing API is running",
-  });
+res.json({
+success: true,
+message: "Vehicle Image Processing API is running",
+status: "healthy",
+environment: process.env.NODE_ENV || "development",
+timestamp: new Date().toISOString(),
+});
+});  });
 });
 
 // Image routes
