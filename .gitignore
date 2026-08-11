@@ -1,12 +1,18 @@
 node_modules/
 .env
+.env.*
+!.env.example
 
 uploads/*
-processed/*
-
 !uploads/.gitkeep
+
+processed/*
 !processed/.gitkeep
 
 *.log
+npm-debug.log*
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+coverage/
